@@ -134,9 +134,9 @@ body {
 
 }
 
-.card1, .card2 {
-    flex: 1; /* This allows both cards to grow and fill the space equally */
-}
+    .card1, .card2 {
+        flex: 1; /* This allows both cards to grow and fill the space equally */
+    }
 
 .card1 {
     display: flex;
@@ -562,8 +562,12 @@ body {
     }
 
     .card2-mobile .hero-image {
-        max-width: 350px;
+        max-width: 300px;
         padding: 0;
+    }
+
+    .card2-mobile .hero-image img {
+        width: 100%;
     }
 
     .social-icons-mobile {
