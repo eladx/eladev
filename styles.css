@@ -23,6 +23,7 @@ h1, h2 {
     text-wrap: balance;
 }
 
+
 body {
     font-family: 'Inter', sans-serif;
     letter-spacing: -0.02em;
@@ -253,11 +254,10 @@ body {
 }
 
 .hero-buttons button {
-    transition: 
-        background-color 0.3s ease,
-        color 0.3s ease,
-        transform 0.2s ease,
-        box-shadow 0.3s ease;
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
 }
 
 .hero-content-wrapper .social-icons {
@@ -279,14 +279,75 @@ body {
     opacity: 0.85;
 }
 
-/* Ensure clearer sizing on very small screens */
-@media (max-width: 380px) {
-    .social-icons a img {
-        width: 0.9rem;
-    }
+.social-icons-mobile {
+    display: none;
 }
 
+.featured-projects {
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+}
 
+.featured-projects h2 {
+    font-size: 3rem;
+    font-size: clamp(2rem, 1.8rem + 1.2vw, 3rem);
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.featured-projects .projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.featured-projects .project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    background-color: #EFDFBB;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.featured-projects .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.featured-projects .project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
+
+.featured-projects .project-card h3 {
+    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 1.1rem + 0.4vw, 1.5rem);
+    margin-bottom: 0.5rem;
+    color: #722f37;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    background-color: darkgray;
+}
+
+.featured-projects .project-card p {
+    font-size: 1rem;
+    font-size: clamp(1rem, 0.94rem + 0.30000000000000004vw, 1.3rem);
+    line-height: 1.4;
+    color: #722f37;
+}
 
 .card2 {
     width: 100%;
@@ -442,6 +503,10 @@ body {
     .hero-container {
         padding: 0;
     }
+
+    .featured-projects {
+        padding-inline: 0;
+    }
 }
 
 
@@ -458,14 +523,27 @@ body {
     }
 
     .card1 {
-        align-items: flex-start;
-        justify-content: start;
+        align-items: center;
+        justify-content: center;
     }
 
     .hero-content-wrapper {
         width: 100%;
-        align-items: flex-start;
-        justify-content: start;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-content-wrapper .hero-buttons {
+        width: 100%;
+    }
+
+    .hero-buttons button {
+        flex: 1 1 100%;
+    }
+
+    .hero-content-wrapper .social-icons {
+        display: none;
     }
 
     .card2 {
@@ -483,11 +561,37 @@ body {
     .card2-mobile .hero-image {
         max-width: 350px;
     }
+
+    .social-icons-mobile {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 1.5em;
+    }
+
+    .social-icons-mobile a img {
+        width: clamp(1rem, 4vw, 2rem); /* scales between 1rem and 2rem based on viewport */
+        filter: invert(1);
+    }
+
 }
 
-@media (max-width: 540px) {
+@media (max-width: 640px) {
     .card2 {
         display: none;
+    }
+
+    .featured-projects .project-card {
+        padding: 1rem;
+    }
+
+    .featured-projects .project-card {
+        gap: 0.5rem;
+    }
+
+    .project-card img {
+        border-radius: 12px;
+        max-width: 100%;
     }
 }
 
@@ -496,11 +600,16 @@ body {
         width: 100%;
     }
 
-    .hero-buttons button {
-        flex: 1 1 100%;
-    }
+    
 }
     
+
+/* Ensure clearer sizing on very small screens */
+@media (max-width: 380px) {
+    .social-icons a img {
+        width: 0.9rem;
+    }
+}
 
 @media (max-width: 320px) {
     
