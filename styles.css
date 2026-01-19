@@ -530,9 +530,11 @@ body {
 
     .hero-content-wrapper {
         width: 100%;
+        gap: 1rem;
         align-items: center;
         justify-content: center;
         text-align: center;
+        padding-block: 0;
     }
 
     .hero-content-wrapper .hero-buttons {
@@ -561,6 +563,7 @@ body {
 
     .card2-mobile .hero-image {
         max-width: 350px;
+        padding: 0;
     }
 
     .social-icons-mobile {
