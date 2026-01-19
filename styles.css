@@ -560,7 +560,7 @@ body {
         align-items: center;
         justify-content: center;
         width: 100%;
-        padding: 1rem;
+        padding: 0;
     }
 
     .card2-mobile .hero-image {
