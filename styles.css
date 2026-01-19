@@ -582,17 +582,19 @@ body {
         display: none;
     }
 
-    .featured-projects .project-card {
-        padding: 1rem;
+    .featured-projects .projects-container {
+        grid-template-columns: 1fr;
     }
 
     .featured-projects .project-card {
         gap: 0.5rem;
+        padding: 1rem;
     }
 
     .project-card img {
         border-radius: 12px;
         max-width: 100%;
+        height: auto;
     }
 }
 
@@ -603,7 +605,13 @@ body {
 
     
 }
-    
+
+@media (max-width: 420px) {
+    .featured-projects .project-card img {
+        max-height: 200px;
+        object-fit: cover;
+    }
+}
 
 /* Ensure clearer sizing on very small screens */
 @media (max-width: 380px) {
