@@ -511,6 +511,9 @@ body {
 
 
 @media (max-width: 768px) {
+    .primary-header {
+        padding: 1.5rem 1rem;
+    }
 
     .hero-container {
         flex-direction: column;
@@ -582,10 +585,6 @@ body {
 @media (max-width: 640px) {
     .primary-header {
         padding: 1rem .5rem;
-    }
-
-    .heropage {
-        border: 1px solid white;
     }
 
     .card2 {
