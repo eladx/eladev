@@ -254,10 +254,11 @@ body {
 }
 
 .hero-buttons button {
-    background-color 0.3s ease,
-    color 0.3s ease,
-    transform 0.2s ease,
-    box-shadow 0.3s ease;
+    transition:
+        background-color 0.3s ease
+        color 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
 }
 
 .hero-content-wrapper .social-icons {
