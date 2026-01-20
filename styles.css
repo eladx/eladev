@@ -6,6 +6,7 @@
     --primary: #DB891B;
     --secondary: #7F3A0E;
     --dark-accent: #542409;
+    --accent-light: #F0A43A;
     --section-bg: #0B282A;
     --cta: #148A88;
     --text-light: #F0F0F0;
@@ -27,7 +28,7 @@ h1, h2 {
 body {
     font-family: 'Inter', sans-serif;
     letter-spacing: -0.02em;
-    background-color: var(--background-color);
+    background-color: #0F2A36;
     color: var(--text-color);
 }
 
@@ -151,7 +152,7 @@ body {
     justify-content: center;
     flex-direction: column;
     padding: 2rem;
-    gap: 2em;
+    gap: 2.5rem;
 }
 
 
@@ -165,7 +166,7 @@ body {
 
 .hero-title span {
     font-family: 'Space Grotesk', sans-serif;
-    color: #D5891B;
+    color: #FDBA3B;
     color: var(--primary);
     text-shadow: 0 0 8px rgba(219, 137, 27, 0.4);
 }
@@ -179,15 +180,21 @@ body {
 .hero-title p {
     font-size: 1rem;
     font-size: clamp(1rem, 0.94rem + 0.30000000000000004vw, 1.3rem);
-    line-height: 1.5;
-    font-weight: 600;
     letter-spacing: 1.2px;
+}
+
+.hero-title .name {
+    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 1.4rem + 0.5vw, 2rem);
+    font-weight: 700;
+    color: #f5f5f5;
 }
 
 
 .typewriter {
     font-size: 1.2rem;
     font-size: clamp(1.2rem, 1.0899999999999999rem + 0.55vw, 1.75rem);
+    font-weight: 400;
     display: inline-flex;
     white-space: nowrap;
     overflow: hidden;
@@ -228,8 +235,8 @@ body {
 }
 
 .card1 .hero-buttons button:first-child { 
-    background-color: var(--primary);
-    color: #17110D;
+    background-color: var(--accent-light);
+    color: #ffffff;
     border: none;
 }
 
@@ -241,8 +248,8 @@ body {
 
 .hero-buttons button:last-child {
     background-color: transparent;
-    color: var(--cta);
-    border: 2px solid var(--cta);
+    color: var(--accent-light);
+    border: 2px solid var(--accent-light);
 }
 
 .hero-buttons button:last-child:hover {
@@ -267,19 +274,26 @@ body {
     gap: 1.5em;
 }
 
-.social-icons a img {
-    width: clamp(1rem, 2.5vw, 2rem); /* scales between 1rem and 2rem based on viewport */
-    height: auto;
-    filter: invert(1);
+.social-icons a svg {
+    width: min(2.5rem, 8vw);
+    fill: var(--accent-light);
     transition: transform 0.2s ease, opacity 0.2s ease, width 0.15s ease;
 }
 
-.social-icons a:hover img {
+.social-icons a {
+    color: var(--accent-light);
+}
+
+.social-icons a svg {
+    fill: currentColor;
+}
+
+.social-icons a:hover svg {
     transform: scale(1.12);
     opacity: 0.85;
 }
 
-.social-icons-mobile {
+.social-icons.mobile{
     display: none;
 }
 
@@ -372,6 +386,7 @@ body {
 
 .hero-image img {
     width: 100%;
+    max-width: 400px;
     height: auto;
     aspect-ratio: 1 / 1; /* maintain a square */
     object-fit: cover;
@@ -412,9 +427,11 @@ body {
     .card1, .card2 {
         width: 100%;
     }
-}
 
-@media (max-width: 900px) {
+    .primary-header {
+        padding: 1.5rem 1rem;
+    }
+
 
     .primary-navigation {
         display: none;
@@ -426,7 +443,7 @@ body {
         display: flex; /* always flex, we'll hide it with transform */
         flex-direction: column;
         list-style: none;
-        top: 100px;
+        top: 83px;
         right: 0;
         padding: 1rem;
         gap: 2rem;
@@ -509,8 +526,11 @@ body {
     }
 }
 
-
 @media (max-width: 768px) {
+    .sidebar {
+        top: 64px;
+    }
+
     .primary-header {
         padding: 1.5rem 1rem;
     }
@@ -560,24 +580,29 @@ body {
         align-items: center;
         justify-content: center;
         width: 100%;
-        padding: 0;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
     }
 
     .card2-mobile .hero-image {
-        max-width: 300px;
+        width: 100%;
         padding: 0;
     }
 
-    .social-icons-mobile {
+    .card2-mobile .hero-image img{
+        width: 50%;
+        padding: 0;
+    }
+
+    .social-icons.mobile {
         width: 100%;
         display: flex;
         justify-content: center;
         gap: 1.5em;
     }
 
-    .social-icons-mobile a img {
-        width: clamp(1rem, 4vw, 2rem); /* scales between 1rem and 2rem based on viewport */
-        filter: invert(1);
+    .social-icons.mobile a img {
+        width: clamp(1rem, 4vw, 2rem);
     }
 
 }
